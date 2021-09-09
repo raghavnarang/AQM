@@ -41,6 +41,18 @@ function App() {
     showBarChart
   };
 
+  if (apiData.status === RequestStatus.ERROR) {
+    return <div className="App">
+      <p>Unable to Load AQM service. Try again later</p>
+    </div>;
+  }
+
+  if (apiData.status === RequestStatus.LOADING) {
+    return <div className="App">
+      <p>Loading...</p>
+    </div>;
+  }
+
   return (
     <AQIContext.Provider value={ctxData}>
       <div className="App">

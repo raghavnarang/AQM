@@ -40,6 +40,7 @@ const useAQI = (): { status: RequestStatus; data: CityAQI } => {
         socket.onerror = function (e) {
             setStatus(RequestStatus.ERROR);
             console.log('Websocket Parse Error', e);
+            socket.close();
         }
 
         return () => socket.close();
