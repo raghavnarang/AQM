@@ -64,7 +64,7 @@ const AQICityChart: React.FC<{ cities: string[] }> = ({ cities }) => {
 
 
         }
-    }, [data]);
+    }, [data, cities, citiesLineData]);
 
     if (status === RequestStatus.LOADING) {
         return <p>Loading...</p>;
