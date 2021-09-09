@@ -14,7 +14,7 @@ const useAQI = (): { status: RequestStatus; data: CityAQI } => {
     const addNewCities = (newCities: CityAQI) => (state: CityAQI) => ({ ...state, ...newCities });
 
     useEffect(() => {
-        const socket = new WebSocket("ws://city-ws.herokuapp.com/");
+        const socket = new WebSocket("wss://city-ws.herokuapp.com/");
         socket.onopen = function (e) {
             setStatus(RequestStatus.OPEN);
         }
